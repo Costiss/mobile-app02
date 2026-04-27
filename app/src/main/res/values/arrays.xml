@@ -1,0 +1,22 @@
+<resources>
+    <string-array name="opcoes_busca">
+        <item>@string/campo_titulo</item>
+        <item>@string/campo_artista</item>
+        <item>@string/campo_ano</item>
+        <item>@string/campo_avaliacao</item>
+        <item>@string/campo_genero</item>
+    </string-array>
+
+    <string-array name="opcoes_ordenacao">
+        <item>@string/campo_titulo</item>
+        <item>@string/campo_artista</item>
+        <item>@string/campo_ano</item>
+        <item>@string/campo_avaliacao</item>
+        <item>@string/campo_genero</item>
+    </string-array>
+
+    <string-array name="opcoes_status">
+        <item>@string/status_ouvida</item>
+        <item>@string/status_para_ouvir</item>
+    </string-array>
+</resources>
