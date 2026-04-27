@@ -1,3 +1,51 @@
 <resources>
-    <string name="app_name">musicbookmark</string>
+    <string name="app_name">Music Bookmark</string>
+
+    <string name="hint_buscar">Buscar…</string>
+    <string name="label_buscar_por">Buscar por:</string>
+    <string name="label_ordenar_por">Ordenar por:</string>
+    <string name="label_apenas_favoritos">Apenas favoritos</string>
+    <string name="btn_adicionar">Adicionar música</string>
+
+    <string name="campo_titulo">Título</string>
+    <string name="campo_artista">Artista</string>
+    <string name="campo_ano">Ano</string>
+    <string name="campo_avaliacao">Avaliação</string>
+    <string name="campo_genero">Gênero</string>
+
+    <string name="titulo_adicionar">Adicionar música</string>
+    <string name="titulo_editar">Editar música</string>
+
+    <string name="hint_titulo">Título</string>
+    <string name="hint_artista">Artista</string>
+    <string name="hint_ano">Ano</string>
+    <string name="hint_genero">Gênero</string>
+    <string name="label_status">Status</string>
+    <string name="label_avaliacao">Avaliação (1–5)</string>
+    <string name="label_favorito">Favorito</string>
+
+    <string name="status_ouvida">Ouvida</string>
+    <string name="status_para_ouvir">Para Ouvir</string>
+
+    <string name="btn_salvar">Salvar</string>
+    <string name="btn_excluir">Excluir</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_confirmar">Confirmar</string>
+    <string name="btn_descartar">Descartar</string>
+
+    <string name="dialogo_excluir_titulo">Excluir música</string>
+    <string name="dialogo_excluir_mensagem">Tem certeza que deseja excluir esta música? Esta ação não pode ser desfeita.</string>
+    <string name="dialogo_descartar_titulo">Descartar alterações</string>
+    <string name="dialogo_descartar_mensagem">Há alterações não salvas. Deseja descartar?</string>
+
+    <string name="erro_titulo_vazio">O título não pode estar vazio.</string>
+    <string name="erro_artista_vazio">O artista não pode estar vazio.</string>
+    <string name="erro_ano_invalido">Informe um ano válido entre 1500 e 2026.</string>
+    <string name="erro_genero_vazio">O gênero não pode estar vazio.</string>
+    <string name="erro_avaliacao_invalida">A avaliação deve ser entre 1 e 5 estrelas.</string>
+    <string name="erro_status_invalido">Selecione um status válido.</string>
+
+    <string name="lista_vazia">Nenhuma música encontrada.</string>
+
+    <string name="icone_favorito_desc">Favorito</string>
 </resources>
