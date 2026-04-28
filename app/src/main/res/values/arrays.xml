@@ -19,4 +19,10 @@
         <item>@string/status_ouvida</item>
         <item>@string/status_para_ouvir</item>
     </string-array>
+
+    <string-array name="opcoes_filtro_status">
+        <item>Todos</item>
+        <item>Para Ouvir</item>
+        <item>Ouvidas</item>
+    </string-array>
 </resources>

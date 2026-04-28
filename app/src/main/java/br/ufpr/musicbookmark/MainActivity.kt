@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var spinnerCampoBusca: Spinner
     private lateinit var spinnerOrdenacao: Spinner
     private lateinit var checkFavoritos: CheckBox
+    private lateinit var spinnerFiltroStatus: Spinner
 
     private val columnMap = listOf(
         DBHelper.COL_TITLE,
@@ -42,7 +43,8 @@ class MainActivity : AppCompatActivity() {
         etBusca          = findViewById(R.id.etBusca)
         spinnerCampoBusca = findViewById(R.id.spinnerCampoBusca)
         spinnerOrdenacao  = findViewById(R.id.spinnerOrdenacao)
-        checkFavoritos   = findViewById(R.id.checkFavoritos)
+        checkFavoritos      = findViewById(R.id.checkFavoritos)
+        spinnerFiltroStatus = findViewById(R.id.spinnerFiltroStatus)
 
         controller = MusicController(this)
         adapter = MusicAdapter(this, mutableListOf())
@@ -54,8 +56,9 @@ class MainActivity : AppCompatActivity() {
             resources.getStringArray(arrayRes)
         ).also { it.setDropDownViewResource(R.layout.spinner_item_dark) }
 
-        spinnerCampoBusca.adapter = darkAdapter(R.array.opcoes_busca)
-        spinnerOrdenacao.adapter  = darkAdapter(R.array.opcoes_ordenacao)
+        spinnerCampoBusca.adapter   = darkAdapter(R.array.opcoes_busca)
+        spinnerOrdenacao.adapter    = darkAdapter(R.array.opcoes_ordenacao)
+        spinnerFiltroStatus.adapter = darkAdapter(R.array.opcoes_filtro_status)
 
         spinnerOrdenacao.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: android.view.View?, pos: Int, id: Long) = refreshList()
@@ -77,6 +80,11 @@ class MainActivity : AppCompatActivity() {
         })
 
         checkFavoritos.setOnCheckedChangeListener { _, _ -> refreshList() }
+
+        spinnerFiltroStatus.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: android.view.View?, pos: Int, id: Long) = refreshList()
+            override fun onNothingSelected(parent: AdapterView<*>) = Unit
+        }
 
         findViewById<com.google.android.material.floatingactionbutton.FloatingActionButton>(R.id.fabAdicionar)
             .setOnClickListener {
@@ -101,9 +109,16 @@ class MainActivity : AppCompatActivity() {
         val field = columnMap[spinnerCampoBusca.selectedItemPosition]
         val sort  = columnMap[spinnerOrdenacao.selectedItemPosition]
         val onlyFavorites = checkFavoritos.isChecked
+        val statusFilter = spinnerFiltroStatus.selectedItemPosition
 
         val list = if (query.isEmpty()) controller.getAll(sort) else controller.search(field, query)
-        val filtered = if (onlyFavorites) list.filter { it.isFavorite } else list
+        val filtered = list
+            .let { if (onlyFavorites) it.filter { m -> m.isFavorite } else it }
+            .let { when (statusFilter) {
+                1 -> it.filter { m -> m.status == MusicController.STATUS_TO_LISTEN }
+                2 -> it.filter { m -> m.status == MusicController.STATUS_LISTENED }
+                else -> it
+            }}
 
         adapter.updateList(filtered)
     }

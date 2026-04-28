@@ -165,6 +165,33 @@
                     android:textColor="#FFFFFF"
                     android:textSize="14sp" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:text="Status:"
+                        android:textColor="#C8C8D8"
+                        android:textSize="14sp" />
+
+                    <Spinner
+                        android:id="@+id/spinnerFiltroStatus"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:backgroundTint="#FFFFFF"
+                        android:padding="8dp"
+                        android:popupBackground="#1F2550" />
+
+                </LinearLayout>
+
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
