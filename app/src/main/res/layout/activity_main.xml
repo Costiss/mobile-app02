@@ -94,8 +94,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:backgroundTint="#FFFFFF"
-                        android:entries="@array/opcoes_busca"
-                        android:padding="8dp" />
+                        android:padding="8dp"
+                        android:popupBackground="#1F2550" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -150,8 +150,8 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:backgroundTint="#FFFFFF"
-                        android:entries="@array/opcoes_ordenacao"
-                        android:padding="8dp" />
+                        android:padding="8dp"
+                        android:popupBackground="#1F2550" />
 
                 </LinearLayout>
 

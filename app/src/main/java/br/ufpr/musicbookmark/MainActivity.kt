@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.CheckBox
 import android.widget.ListView
 import android.widget.Spinner
@@ -47,6 +48,14 @@ class MainActivity : AppCompatActivity() {
         adapter = MusicAdapter(this, mutableListOf())
         listView.adapter = adapter
         listView.emptyView = findViewById(R.id.tvListaVazia)
+
+        fun darkAdapter(arrayRes: Int) = ArrayAdapter(
+            this, R.layout.spinner_item_dark,
+            resources.getStringArray(arrayRes)
+        ).also { it.setDropDownViewResource(R.layout.spinner_item_dark) }
+
+        spinnerCampoBusca.adapter = darkAdapter(R.array.opcoes_busca)
+        spinnerOrdenacao.adapter  = darkAdapter(R.array.opcoes_ordenacao)
 
         spinnerOrdenacao.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: android.view.View?, pos: Int, id: Long) = refreshList()

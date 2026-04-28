@@ -77,6 +77,12 @@ class MusicDetailActivity : AppCompatActivity() {
         val autoAdapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, artists)
         actvArtista.setAdapter(autoAdapter)
 
+        val statusAdapter = ArrayAdapter(
+            this, R.layout.spinner_item_dark,
+            resources.getStringArray(R.array.opcoes_status)
+        ).also { it.setDropDownViewResource(R.layout.spinner_item_dark) }
+        spinnerStatus.adapter = statusAdapter
+
         if (isEditMode) {
             val music = controller.getById(musicId)
             if (music != null) {
