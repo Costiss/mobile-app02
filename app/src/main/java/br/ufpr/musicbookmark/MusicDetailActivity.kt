@@ -180,16 +180,18 @@ class MusicDetailActivity : AppCompatActivity() {
                 finish()
             }
             is ValidationResult.Invalid -> {
+                var firstFocusView: View? = null
                 result.errors.forEach { (key, message) ->
                     when (key) {
-                        "title"  -> tilTitulo.error  = message
-                        "artist" -> tilArtista.error = message
-                        "year"   -> tilAno.error     = message
-                        "genre"  -> tilGenero.error  = message
-                        "rating" -> Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-                        "status" -> Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+                        "title"  -> { tilTitulo.error  = message; if (firstFocusView == null) firstFocusView = etTitulo }
+                        "artist" -> { tilArtista.error = message; if (firstFocusView == null) firstFocusView = actvArtista }
+                        "year"   -> { tilAno.error     = message; if (firstFocusView == null) firstFocusView = etAno }
+                        "genre"  -> { tilGenero.error  = message; if (firstFocusView == null) firstFocusView = etGenero }
+                        "rating" -> { Toast.makeText(this, message, Toast.LENGTH_SHORT).show(); if (firstFocusView == null) firstFocusView = ratingBarInput }
+                        "status" -> { Toast.makeText(this, message, Toast.LENGTH_SHORT).show(); if (firstFocusView == null) firstFocusView = spinnerStatus }
                     }
                 }
+                firstFocusView?.requestFocus()
             }
         }
     }
