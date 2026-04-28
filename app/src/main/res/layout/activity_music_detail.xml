@@ -2,151 +2,215 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#101124">
 
-    <androidx.core.widget.NestedScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_height="?attr/actionBarSize"
+            android:background="#1A1D3A"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            app:navigationIconTint="#FFFFFF"
+            app:title="@string/titulo_adicionar"
+            app:titleCentered="true"
+            app:titleTextColor="#FFFFFF" />
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:layout_marginBottom="8dp"
-                app:navigationIcon="?attr/homeAsUpIndicator"
-                app:title="@string/titulo_adicionar" />
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilTitulo"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:hint="@string/hint_titulo"
-                app:errorEnabled="true">
+                android:layout_margin="16dp"
+                app:cardBackgroundColor="#1F2550"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="4dp"
+                app:strokeColor="#343B75"
+                app:strokeWidth="1dp">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etTitulo"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:orientation="vertical"
+                    android:padding="20dp">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilArtista"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:hint="@string/hint_artista"
-                app:errorEnabled="true">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilTitulo"
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:layout_marginBottom="12dp"
+                        android:hint="@string/hint_titulo"
+                        app:boxBackgroundColor="#252B5C"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxStrokeColor="#7C5CFF"
+                        app:errorEnabled="true"
+                        app:hintTextColor="#C8C8D8">
 
-                <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                    android:id="@+id/actvArtista"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:completionThreshold="1"
-                    android:inputType="text" />
-            </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etTitulo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:textColor="#FFFFFF" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilAno"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:hint="@string/hint_ano"
-                app:errorEnabled="true">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilArtista"
+                        android:layout_width="match_parent"
+                        android:layout_height="61dp"
+                        android:layout_marginBottom="12dp"
+                        android:hint="@string/hint_artista"
+                        app:boxBackgroundColor="#252B5C"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxStrokeColor="#7C5CFF"
+                        app:errorEnabled="true"
+                        app:hintTextColor="#C8C8D8">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etAno"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number" />
-            </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/actvArtista"
+                            android:layout_width="match_parent"
+                            android:layout_height="46dp"
+                            android:completionThreshold="1"
+                            android:inputType="text"
+                            android:textColor="#FFFFFF" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilGenero"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:hint="@string/hint_genero"
-                app:errorEnabled="true">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilAno"
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        android:layout_marginBottom="12dp"
+                        android:hint="@string/hint_ano"
+                        app:boxBackgroundColor="#252B5C"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxStrokeColor="#7C5CFF"
+                        app:errorEnabled="true"
+                        app:hintTextColor="#C8C8D8">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etGenero"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text" />
-            </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etAno"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:textColor="#FFFFFF" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:text="@string/label_status"
-                android:textSize="14sp" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilGenero"
+                        android:layout_width="match_parent"
+                        android:layout_height="66dp"
+                        android:layout_marginBottom="12dp"
+                        android:hint="@string/hint_genero"
+                        app:boxBackgroundColor="#252B5C"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxStrokeColor="#7C5CFF"
+                        app:errorEnabled="true"
+                        app:hintTextColor="#C8C8D8">
 
-            <Spinner
-                android:id="@+id/spinnerStatus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:entries="@array/opcoes_status" />
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etGenero"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:textColor="#FFFFFF" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:text="@string/label_avaliacao"
-                android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/label_status"
+                        android:textColor="#C8C8D8"
+                        android:textSize="14sp" />
 
-            <RatingBar
-                android:id="@+id/ratingBarInput"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:numStars="5"
-                android:rating="0"
-                android:stepSize="1" />
+                    <Spinner
+                        android:id="@+id/spinnerStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:backgroundTint="#FFFFFF"
+                        android:entries="@array/opcoes_status"
+                        android:padding="8dp" />
 
-            <CheckBox
-                android:id="@+id/checkFavorito"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:text="@string/label_favorito" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/label_avaliacao"
+                        android:textColor="#C8C8D8"
+                        android:textSize="14sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
+                    <RatingBar
+                        android:id="@+id/ratingBarInput"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:numStars="5"
+                        android:progressTint="#FFD700"
+                        android:rating="0"
+                        android:stepSize="1" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnSalvar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:text="@string/btn_salvar"
-                    app:icon="@drawable/ic_save" />
+                    <CheckBox
+                        android:id="@+id/checkFavorito"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:buttonTint="#7C5CFF"
+                        android:text="@string/label_favorito"
+                        android:textColor="#FFFFFF" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnExcluir"
-                    style="@style/Widget.MaterialComponents.Button.TextButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/btn_excluir"
-                    android:textColor="@android:color/holo_red_dark"
-                    android:visibility="gone"
-                    app:icon="@drawable/ic_delete"
-                    app:iconTint="@android:color/holo_red_dark" />
-            </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnSalvar"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:text="@string/btn_salvar"
+                            app:backgroundTint="#7C5CFF"
+                            app:cornerRadius="12dp"
+                            app:icon="@drawable/ic_save" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnExcluir"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/btn_excluir"
+                            android:textColor="#FF5252"
+                            android:visibility="gone"
+                            app:icon="@drawable/ic_delete"
+                            app:iconTint="#FF5252" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
