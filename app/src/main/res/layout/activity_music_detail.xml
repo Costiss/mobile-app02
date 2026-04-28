@@ -148,8 +148,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="16dp"
                         android:backgroundTint="#FFFFFF"
-                        android:entries="@array/opcoes_status"
-                        android:padding="8dp" />
+                        android:padding="8dp"
+                        android:popupBackground="#1F2550" />
 
                     <TextView
                         android:layout_width="wrap_content"
